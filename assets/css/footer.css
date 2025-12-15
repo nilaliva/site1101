@@ -1,0 +1,183 @@
+/*
+ * Custom footer styles for personal portfolio
+ * -------------------------------------------
+ * Copy this file to: assets/css/footer.css
+ * In _layouts/default.html add:
+ *   <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
+ *
+ * Footer HTML include: _includes/footer.html
+ */
+
+ .site-footer {
+    background: #020147;          /* dark blue background */
+    color: #ffffff;               /* white text */
+    padding: 2rem 1.5rem 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Left: name / logo */
+  .footer-branding {
+    min-width: 180px;
+  }
+  
+  .footer-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .footer-tagline {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: #e5e7eb;
+  }
+  
+  /* Center: nav links */
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.75rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-nav a {
+    position: relative;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #e5e7eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  /* Underline effect similar to navbar */
+  .footer-nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.15rem;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6d6d79, #687085);
+    transform: translateX(-50%);
+    transition: width 0.22s ease, background 0.22s ease;
+  }
+  
+  .footer-nav a:hover {
+    color: #ffffff;
+  }
+  
+  .footer-nav a:hover::after {
+    width: 60%;
+  }
+  
+  /* Right: socials + button */
+  .footer-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    min-width: 210px;
+  }
+  
+  /* Social icon row */
+  .footer-social {
+    display: flex;
+    gap: 0.7rem;
+  }
+  
+  .footer-icon {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: transparent;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+  }
+  
+  .footer-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+  
+  .footer-icon:hover {
+    background: #141361;
+    border-color: #ffffff;
+    transform: translateY(-1px);
+  }
+  
+  /* Reuse navbar button style if you already have .btn-contact in header.css */
+  .btn-contact.footer-contact-btn {
+    display: inline-block;
+    margin-top: 0.25rem;
+  }
+  
+  /* If .btn-contact doesn't exist for some reason, uncomment this block:
+  .btn-contact {
+    padding: 0.5rem 1.2rem;
+    background-color: #090d46;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .btn-contact:hover {
+    background-color: #141361;
+  }
+  */
+  
+  /* Bottom bar */
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 1.5rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.4);
+    font-size: 0.8rem;
+    color: #cbd5f5;
+    text-align: center;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .footer-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-branding {
+      align-items: center;
+    }
+  
+    .footer-actions {
+      align-items: center;
+    }
+  
+    .footer-nav {
+      justify-content: center;
+    }
+  
+    .btn-contact.footer-contact-btn {
+      width: 80%;
+      max-width: 260px;
+      text-align: center;
+    }
+  }
