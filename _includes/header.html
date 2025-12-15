@@ -9,85 +9,50 @@
 
   usually near the top of the <body>.
 {%- endcomment -%}
-
 <header class="site-header" role="banner">
   <div class="site-header-inner">
-    <!-- Site name / logo area -->
+    
+    <!-- Логотип / название -->
     <div class="site-branding">
-      {%- comment -%}
-        Replace "Your Name" and subtitle text below with your actual name / role,
-        or use {{ site.title }} and {{ site.description }} from _config.yml.
-      {%- endcomment -%}
-      <div>
-        <div class="site-title">
-          <a href="{{ '/' | relative_url }}">
-            {{ site.title | default: "Your Name" }}
-          </a>
-        </div>
-        <div class="site-subtitle">
-          {{ site.description | default: "Designer / Developer" }}
-        </div>
+      <div class="site-title">
+        <a href="{{ '/' | relative_url }}">
+          {{ site.title | default: "Nilay Aliyeva" }}
+        </a>
+      </div>
+      <div class="site-subtitle">
+        {{ site.description | default: "Programmer / Developer" }}
       </div>
     </div>
 
-    <!-- Navigation -->
-    <div class="site-nav-wrapper">
-      <!-- Mobile burger button -->
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-        onclick="(function(btn){ var nav = document.getElementById('primary-nav'); var isOpen = nav.classList.toggle('is-open'); btn.classList.toggle('is-open', isOpen); btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); })(this);"
-      >
-        <span class="nav-toggle-bar" aria-hidden="true"></span>
-      </button>
+    <!-- Навигация по центру -->
+    <nav class="site-nav" id="primary-nav" role="navigation">
+      <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}is-active{% endif %}">Home</a>
+      <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about' %}is-active{% endif %}">About</a>
+      <a href="{{ '/projects/' | relative_url }}" class="{% if page.url contains '/projects' %}is-active{% endif %}">Projects</a>
+      <a href="{{ '/blog/' | relative_url }}" class="{% if page.url contains '/blog' or page.layout == 'post' %}is-active{% endif %}">Blog</a>
+    </nav>
 
-      <nav class="site-nav" id="primary-nav" role="navigation">
-        {%- comment -%}
-          Navigation links:
-          - Home     -> index.md or index.html
-          - About    -> about.md / about.markdown
-          - Projects -> projects.md (create this page if it does not exist)
-          - Blog     -> blog index, here we link to the posts listing ("/" or "/blog")
-        {%- endcomment -%}
-
-        <a
-          href="{{ '/' | relative_url }}"
-          class="{% if page.url == '/' %}is-active{% endif %}"
-        >
-          Home
-        </a>
-
-        <a
-          href="{{ '/about/' | relative_url }}"
-          class="{% if page.url contains '/about' %}is-active{% endif %}"
-        >
-          About
-        </a>
-
-        <a
-          href="{{ '/projects/' | relative_url }}"
-          class="{% if page.url contains '/projects' %}is-active{% endif %}"
-        >
-          Projects
-        </a>
-
-        {%- comment -%}
-          By default Jekyll shows posts on the home page.
-          If you create a dedicated blog index at /blog/, update the href below:
-            href="{{ '/blog/' | relative_url }}"
-        {%- endcomment -%}
-        <a
-          href="{{ '/blog/' | relative_url }}"
-          class="{% if page.url contains '/blog' or page.layout == 'post' %}is-active{% endif %}"
-        >
-          Blog
-        </a>
-      </nav>
+    <!-- Кнопка справа -->
+    <div class="header-contact">
+      <a href="#contact" class="btn-contact">Contact me</a>
     </div>
+
+    <!-- Mobile menu button (hamburger) -->
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      onclick="(function(btn){ 
+        var nav = document.getElementById('primary-nav'); 
+        var isOpen = nav.classList.toggle('is-open'); 
+        btn.classList.toggle('is-open', isOpen); 
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); 
+      })(this);"
+    >
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+
   </div>
 </header>
-
-

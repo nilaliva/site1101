@@ -10,19 +10,19 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #0f172a; /* dark navy */
+  background: #ffffff; /* dark navy */
   color: #f9fafb;
   border-bottom: 1px solid rgba(148, 163, 184, 0.3);
 }
 
 .site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* логотип слева, кнопка справа */
   max-width: 1100px;
   margin: 0 auto;
   padding: 0.75rem 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 /* Site branding / name */
@@ -34,16 +34,16 @@
 }
 
 .site-title {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #e5e7eb;
+  color: #020147;
 }
 
+
 .site-subtitle {
-  font-size: 0.8rem;
-  color: #9ca3af;
+  font-size: 0.85rem;
+  color: #1f1a64;
 }
 
 .site-title a {
@@ -52,47 +52,53 @@
 }
 
 .site-title a:hover {
-  color: #38bdf8;
+  color: #04115f;
 }
 
 /* Navigation base styles */
 .site-nav {
   display: flex;
-  align-items: center;
   gap: 1.75rem;
+  margin: 0 auto; /* центрируем навбар между логотипом и кнопкой */
 }
+
 
 .site-nav a {
   position: relative;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #e5e7eb;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #1c3481;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 .site-nav a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -0.3rem;
-  width: 0;
+  left: 50%;
+  bottom: -0.1rem;
+  width: 0; /* по умолчанию для всех ссылок линии нет */
   height: 2px;
-  background: linear-gradient(90deg, #38bdf8, #a855f7);
-  transition: width 0.22s ease;
+  background: linear-gradient(90deg, #0b16a7, #141361);
+  transition: width 0.22s ease, background 0.22s ease;
+  transform: translateX(-50%);
 }
-
 .site-nav a:hover {
-  color: #f9fafb;
+  color: #262753;
 }
 
-.site-nav a:hover::after,
+
+/* Активная страница — линия короткая */
 .site-nav a.is-active::after {
-  width: 100%;
+  width: 60%; /* длина линии Home */
+  background: linear-gradient(90deg, #0b16a7, #141361);
+}
+.site-nav a:hover::after {
+  width: 60%;
+  background: linear-gradient(90deg, #6d6d79, #687085); /* например красная */
 }
 
 .site-nav a.is-active {
-  color: #38bdf8;
+  color: #0a0250;
 }
 
 /* Mobile menu button (hamburger) */
@@ -103,7 +109,7 @@
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.8);
   background: rgba(15, 23, 42, 0.95);
-  color: #e5e7eb;
+  color: #1a2231;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -111,8 +117,8 @@
 }
 
 .nav-toggle:hover {
-  background: rgba(30, 64, 175, 0.9);
-  border-color: #38bdf8;
+  background: rgba(0, 0, 65, 0.9);
+  border-color: #010041;
   transform: translateY(-1px);
 }
 
@@ -120,7 +126,7 @@
   width: 1.1rem;
   height: 2px;
   border-radius: 999px;
-  background: #e5e7eb;
+  background: #242629;
   position: relative;
   transition: background 0.2s ease;
 }
@@ -133,7 +139,7 @@
   width: 100%;
   height: 2px;
   border-radius: 999px;
-  background: #e5e7eb;
+  background: #2f3033;
   transition: transform 0.2s ease, top 0.2s ease, opacity 0.2s ease;
 }
 
@@ -164,21 +170,64 @@
 .site-nav-wrapper {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-left: auto; /* вот это сдвигает меню и кнопку вправо */
 }
 
+.btn-contact {
+  padding: 0.5rem 1.2rem;
+  background-color: #090d46;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-contact:hover {
+  background-color: #141361;
+}
+.site-branding {
+  display: flex;
+  flex-direction: column; /* чтобы Portfolio и подзаголовок были вертикально */
+  gap: 0.2rem; /* расстояние между ними */
+  white-space: nowrap;
+}
 /* Responsive behavior */
 @media (max-width: 768px) {
+
   .site-header-inner {
-    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* оставляем логотип слева */
+    position: relative;
   }
+  
+  
 
   .site-subtitle {
     display: none; /* keep header compact on small screens */
   }
 
   .site-nav-wrapper {
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
+  }
+  .site-nav-wrapper.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .site-nav {
@@ -188,7 +237,7 @@
     min-width: 11rem;
     padding: 0.75rem;
     border-radius: 0.75rem;
-    background: rgba(15, 23, 42, 0.98);
+    background: rgba(15, 42, 23, 0.98);
     border: 1px solid rgba(148, 163, 184, 0.4);
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.55);
     flex-direction: column;
@@ -207,6 +256,11 @@
 
   .nav-toggle {
     display: inline-flex;
+  }
+
+  .btn-contact {
+    width: 100%;
+    text-align: center;
   }
 }
 
