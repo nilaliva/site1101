@@ -1,0 +1,50 @@
+{%- comment -%}
+  Default layout
+  --------------
+  To enable the custom responsive header:
+
+  1. Make sure this layout includes the stylesheet links:
+       <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+       <link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}">
+
+     (Add the second line if it does not exist yet.)
+
+  2. Include the header right after the opening <body> tag:
+       {% raw %}{% include header.html %}{% endraw %}
+{%- endcomment -%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+    {%- comment -%}
+      Main stylesheet (created by Jekyll / theme)
+    {%- endcomment -%}
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    {%- comment -%}
+      Custom header styles (assets/css/header.css)
+      Make sure this file exists; created in this assistant session.
+    {%- endcomment -%}
+    <link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}">
+  </head>
+  <body>
+    {%- comment -%}
+      Include the responsive header / navigation bar.
+      File path: _includes/header.html
+    {%- endcomment -%}
+    {% include header.html %}
+
+    {%- comment -%}
+      Main content from pages / posts
+    {%- endcomment -%}
+    {{ content }}
+  </body>
+</html>
+
+
