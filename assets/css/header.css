@@ -216,9 +216,9 @@
     flex-direction: column;
     gap: 0.5rem;
     padding: 0.75rem;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 0.75rem;
-    border: 1px solid rgba(148, 163, 184, 0.4);
+    border: 1px solid rgba(19, 3, 116, 0.377);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4px);
@@ -237,9 +237,9 @@
     min-width: 11rem;
     padding: 0.75rem;
     border-radius: 0.75rem;
-    background: rgba(15, 42, 23, 0.98);
-    border: 1px solid rgba(148, 163, 184, 0.4);
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.55);
+    background: rgb(14, 1, 70);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.986);
     flex-direction: column;
     gap: 0.5rem;
     opacity: 0;
@@ -247,6 +247,19 @@
     transform: translateY(-4px);
     transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
   }
+  .site-nav a,
+  .site-nav a.is-active,
+  .site-nav a:hover {
+    color: #ffffff !important; /* белые ссылки */
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+  }    
+    
+  .site-nav a::after  {
+    background: #ffffff !important; /* линия при наведении белая */
+  }
+
 
   .site-nav.is-open {
     opacity: 1;
@@ -256,11 +269,28 @@
 
   .nav-toggle {
     display: inline-flex;
+
+  }
+  .nav-toggle.is-open .nav-toggle-bar::before,
+  .nav-toggle.is-open .nav-toggle-bar::after {
+    background-color: #ffffff; /* тоже белые линии крестика */
+  }
+  .nav-toggle-bar {
+    background-color: #ffffff; /* центральная линия */
+  }
+  
+  .nav-toggle-bar::before,
+  .nav-toggle-bar::after {
+    background-color: #ffffff; /* верхняя и нижняя линии */
   }
 
   .btn-contact {
-    width: 100%;
-    text-align: center;
+    width: 90%;          /* растягиваем на всю ширину */
+    text-align: center;    /* текст по центру */
+    padding: 0.6rem 0;    /* вертикальные отступы */
+    font-size: 0.9rem;    /* немного увеличим шрифт для удобства */
+    border-radius: 0.75rem; /* плавные углы */
+    display: block;        /* чтобы занимала всю ширину */
   }
 }
 
