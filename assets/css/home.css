@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pacifico&display=swap');
+
+:root {
+  --text-main: #0a0a0a;
+  --text-muted: #111827;
+  --highlight: #b7e5ff;
+  --accent: #3b82f6;
+  --accent-2: #60a5fa;
+  --soft-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text-main);
+  background: #ffffff;
+}
+
+.home-hero {
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+.hero-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1.1;
+  min-width: 300px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 4vw + 1.5rem, 3.5rem);
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.hero-title .highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  bottom: -4px;
+  width: calc(100% + 6px);
+  height: 0.46em;
+  background: var(--highlight);
+  z-index: -1;
+  border-radius: 0.3em;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  margin: 0 0 0.9rem;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  margin: 1.2rem 0 1.5rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.65rem 1.45rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.32);
+  transition: transform 0.15s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-actions .btn-primary {
+  padding: 0.75rem 1.7rem; /* увеличить кнопку Learn More */
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 34px rgba(59, 130, 246, 0.38);
+}
+
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.social-label {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #0f172a;
+  text-decoration: none;
+  transition: transform 0.15s ease, filter 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+}
+
+.social-links a:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  background: linear-gradient(135deg, #0f172a, #1f2c60);
+}
+
+.hero-right {
+  flex: 0.9;
+  min-width: 280px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem; /* расстояние между текстом и фото */
+  position: relative;
+}
+
+.hero-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Текст "Hi, I’m Nilay" */
+.hero-note {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+.hero-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Текст "Hi, I’m Nilay" */
+.hero-note {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-note::before {
+  content: '';
+  position: absolute;
+  left: -70px;
+  top: 14px;
+  width: 62px;
+  height: 18px;
+  border-bottom: 3px solid var(--highlight);
+  border-radius: 999px;
+  transform: rotate(-6deg);
+  box-shadow: 0 -6px 0 -6px var(--highlight);
+}
+.hero-badge.btn-glow {
+  position: absolute;
+  top: 15px; 
+  right: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.4);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.hero-badge.btn-glow:hover {
+  box-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 25px rgba(255,255,255,0.7);
+  transform: translateY(-1px);
+}
+.hero-image-wrapper {
+  position: relative;
+  width: min(500px, 100%);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+  background: #f4f7fb;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.hero-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+}
+.btn-glow {
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.4);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 25px rgba(255,255,255,0.7);
+  transform: translateY(-1px);
+}
+@media (max-width: 960px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-note {
+    left: 18%;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    padding: 1.75rem 1.1rem 2.25rem;
+  }
+
+  .hero-inner {
+    gap: 2rem;
+  }
+
+  .hero-left,
+  .hero-right {
+    min-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-social {
+    align-items: flex-start;
+  }
+
+  .hero-note {
+    position: static;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-note::before {
+    display: none;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    width: min(440px, 100%);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+    background: #f4f7fb;
+  }
+
+  .hero-badge {
+    font-size: 0.85rem;
+  }
+}
+
+

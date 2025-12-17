@@ -15,6 +15,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,9 +27,17 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}"> <!-- добавили футер CSS -->
-</head>
+    <link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}"> <!-- добавили футер CSS -->
+    {%- comment -%}
+      Optional per-page styles: set page.custom_css: ["/assets/css/home.css"]
+    {%- endcomment -%}
+    {% if page.custom_css %}
+      {% for css in page.custom_css %}
+        <link rel="stylesheet" href="{{ css | relative_url }}">
+      {% endfor %}
+    {% endif %}
+  </head>
   <body>
     {% include header.html %}
 
