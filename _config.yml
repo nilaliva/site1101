@@ -24,10 +24,12 @@ description: ""
 
 baseurl: ""
 url: ""
-theme: minima
 plugins:
   - jekyll-feed
 
+include:
+  - _pages
+  - assets
 
 # Exclude from processing.
 # The following items will not be processed, by default.

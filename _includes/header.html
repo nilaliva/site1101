@@ -27,9 +27,11 @@
     <!-- Навигация по центру -->
     <nav class="site-nav" id="primary-nav" role="navigation">
       <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}is-active{% endif %}">Home</a>
-      <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about' %}is-active{% endif %}">About</a>
       <a href="{{ '/projects/' | relative_url }}" class="{% if page.url contains '/projects' %}is-active{% endif %}">Projects</a>
+      <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about' %}is-active{% endif %}">About</a>
+
       <a href="{{ '/blog/' | relative_url }}" class="{% if page.url contains '/blog' or page.layout == 'post' %}is-active{% endif %}">Blog</a>
+
     </nav>
 
     <!-- Кнопка справа -->
