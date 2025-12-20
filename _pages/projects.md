@@ -67,7 +67,7 @@ We built 5 logic gates in the ADA laboratory, learning their functions and appli
           />
         </div>
         <div class="project-content">
-          <h3 class="project-title">Project Title 3</h3>
+          <h3 class="project-title">Stream studios</h3>
           <p class="project-description">
 I built my own platform where users can watch movies and series, featuring an easy-to-use interface and seamless streaming experience.          </p>
         </div>

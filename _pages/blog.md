@@ -62,7 +62,28 @@ Welcome to my blog! Here, I share updates about my projects, experiences in web 
       {% else %}
         <!-- Placeholder posts if no blog posts exist -->
 
+        <article class="blog-card">
+          <div class="blog-image-wrapper">
+            <img
+              src="{{ '/assets/images/porshe911gt3.jpeg' | relative_url }}"
+              alt="Blog post"
+              class="blog-image"
+              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22400%22 height=%22250%22/%3E%3Ctext fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22 dy=%2210.5%22 font-weight=%22bold%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3EBlog Post%3C/text%3E%3C/svg%3E'"
+            />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">
+              <a href="#">Building Modern Web Applications</a>
+            </h3>
+            <p class="blog-description">
+The members of Group 76 at SITE1101 gave me a Porsche 911 GT3 as a present. I was so happy that I can’t even put it into words. Thank you so much!            </p>
+            <div class="blog-meta">
+              <time datetime="2025-01-10" class="blog-date">December 19, 2025</time>
+            </div>
+          </div>
+        </article>
 
+        
         <article class="blog-card">
           <div class="blog-image-wrapper">
             <img

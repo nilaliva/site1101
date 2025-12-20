@@ -23,7 +23,7 @@ email: "naliyeva26425@ada.edu.az"
 description: ""
 
 baseurl: ""
-url: ""
+url: "https://nilaliva.github.io"
 plugins:
   - jekyll-feed
 
